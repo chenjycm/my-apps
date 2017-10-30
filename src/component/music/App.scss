@@ -1,0 +1,330 @@
+.musicApp {
+  text-align: center;
+  cursor: default;
+}
+.music-box{
+    position: relative;
+    width: 400px;
+    height: 540px;
+    background-color: #888;
+    background: url('./images/bg.jpg');
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 16px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 7px #dad0d0;
+}
+.music-name{
+    width: 70%;
+    margin: 0 auto;
+    font-size: 20px;
+    color: #fff;
+    overflow: hidden;
+    height: 30px;
+}
+.singer{
+    width: 70%;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #fff;
+    overflow: hidden;
+    height: 24px;
+}
+/*音乐图片*/
+.music-pic{
+    position: relative;
+    width: 360px;
+    height: 300px;
+    margin: auto;
+    margin-top: 20px;
+    /*border: 1px solid #676869;*/
+}
+.music-pic img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    // min-width: 100%;
+    // min-height: 100%;
+}
+/*音乐进度*/
+.timeline{
+    heigth:20px;
+    margin: auto;
+    margin-top: 10px;
+    color: #fff;
+}
+.timeline span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.progress{
+    display: inline-block;
+    width: 275px;
+    height: 3px;
+    margin: 0 12px;
+    border: 1px solid #676869;
+    vertical-align: middle;
+}
+.process{ 
+    position: relative;
+    height: 1px ;
+    width: 10px;
+    background-color: #cddc39;
+}
+.protog{
+    position: absolute;
+    right: -4px;
+    top: -3px;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color:#fff; 
+    cursor: pointer;
+}
+.prodrag{
+    display: inline-block;
+    vertical-align: middle;
+    width: 68%;
+    margin: 0px 6px;
+}
+.prodrag .ant-slider-handle{
+    margin-top: -6px;
+}
+.prodrag .ant-slider-step{
+    height: 2px;
+}
+.prodrag .ant-slider-track{
+    height: 2px;
+}
+.prodrag .ant-slider-rail{
+    height: 2px;
+}
+
+.ant-slider-vertical .ant-slider-handle {
+    margin-left: -6px !important;
+}
+.ant-slider-vertical .ant-slider-track {
+    width: 2px !important;
+}
+.ant-slider-vertical .ant-slider-step {
+    width: 2px !important;
+}
+.ant-slider-vertical .ant-slider-rail {
+    width: 2px !important;
+}
+/*音乐控制*/
+.controler{
+    width: 360px;
+    height: 80px;
+    margin: auto;
+    margin-top: 5px;
+    position: relative;
+}
+.n-p{
+    font-size: 26px;
+    color: #fff;
+    vertical-align: middle !important;
+    cursor: pointer;
+}
+.n-p:hover{
+    color:#d2d2d2;
+}
+.play{
+   font-size: 60px;
+   color: #fff;
+   vertical-align: middle !important;
+   margin: 10px 50px;
+   cursor: pointer;
+   &:hover{
+        color:#d2d2d2;
+   }
+}
+.contrvo{
+    height: 82%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ant-slider-handle{
+    border: solid 1px #a59d9d !important;
+}
+.ant-slider-track {
+    background-color: #82c0ca !important;
+}
+/*音乐列表*/
+
+.music-listbtn{
+    position: absolute;
+    top: 22px;
+    left: 30px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+.music-search{
+    position: absolute;
+    top: 22px;
+    right: 30px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+.listshowing{
+    visibility: visible;
+    opacity: 1;  
+    position: absolute;
+    top: 56px;
+    width: 86%;
+    margin-left: 7%;
+    margin-right: 7%;
+    padding: 10px 0;  
+    height: 63%;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 10;
+    transition: all 0.4s;
+}
+.listshowing ul{
+   
+}
+.searchUl{
+    overflow-y: scroll;
+    max-height: 256px;
+    transition: all 0.4s ;
+}
+.musicUl{
+    overflow-y: scroll;
+    max-height: 294px;
+    transition: all 0.4s ;
+}
+.listshowing li{
+    position: relative;
+    visibility: visible;
+    opacity: 1;  
+    text-align: left;
+    font-size: 13px;
+    padding:5px 20px;
+    border-bottom: 1px solid #efefeb;   
+}
+.listshowing li span{
+    display: inline-block;
+    width: 94%;
+    vertical-align: middle;
+    word-break: break-all;
+}
+.listhide{
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    position: absolute;
+    top: 57px;
+    width: 86%;
+    margin-left: 7%;
+    margin-right: 7%; 
+    z-index: 10;
+    transition: all 0.5s;   
+}
+.listhide li{
+    display: none;
+    transition: all 0.5s;     
+}
+
+.lists li:hover{
+    background-color: #e2e2e0;
+}
+.lists .active{
+    background-color: #b7e5ff;
+}
+.ant-message{
+    top: 270px !important;
+}
+.musictitle{
+    cursor: pointer;
+}
+.serchinput{
+    width: 92% !important;
+    margin: 5px 0;
+}
+
+.listsbtn{
+    width: 6%;
+    vertical-align: middle !important;
+    color: #9297a2;
+    font-size: 16px;
+    cursor: pointer;
+}
+.prevPage{
+    position: absolute;
+    left: 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.nextPage{
+    position: absolute;
+    right: 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.closeList{
+    color: #9297a2;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 20px;
+    margin-bottom: 7px;
+}
+.playType{
+    position: absolute !important;
+    right: 0;
+}
+.ant-switch-checked{
+    background-color: #82c0ca !important;
+}
+.appInfo{
+    margin-top: 20px;
+    .gitAddress{
+        font-size: 14px;
+    }
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@media screen and (max-width: 440px) {
+    .music-box{
+        width: 98%;
+        height: 540px;
+    }
+    .music-pic{
+        width: 85%;
+    }
+    .controler{
+        width: 90%;
+    }
+    .play{
+        margin: 10px 12%;
+    }
+    .music-pic img {       
+        min-height: initial;
+    }
+}
+@media screen and (max-width: 400px) {
+    .music-box{       
+        height: 480px;
+    }
+    .music-pic{
+        height: 250px;
+    }
+    .searchUl{
+        max-height: 224px;
+    }
+    .musicUl{
+        max-height: 262px;
+    }
+}
