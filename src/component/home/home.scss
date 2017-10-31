@@ -28,6 +28,7 @@
     display: inline-block; 
     width: 80%;  
     ul { 
+        display: inline-block;
         li {
            list-style: none;
            display: inline-block;                    
@@ -53,36 +54,31 @@
                 color: #fff !important;
             }
        }
+        .mobileShowName{
+            display: none;
+        } 
     }
     .appStore{
         vertical-align: middle;
         font-size: 20px;
         margin: 0 10px;
         cursor: pointer;
+        display: none;
     }
 }
-.mobileNavigation{
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 180px;
-    background-color: #d5d5d5;    
-    ul{
-        li{
-            padding: 10px;
-            font-size: 14px;
-            border-bottom: 1px solid #fff;
-            a{
-                color: #555;
-            }
+.mobileNavigation{   
+    li{
+        font-size: 14px;
+        margin: 5px 0;
+        a{
+            display: inline-block;
+            width: 100%;
+            color: #555;            
             &:hover{
-                background-color: #555;
-                a{
-                    color: #fff;
-                }
+                color: #108ee9;
             }
-        }
-    }
+        }       
+    }    
 }
 .userBox{
     display: inline-block;
@@ -122,14 +118,18 @@
     .navigation{
         width: initial;
         ul{
-            li{
-                &:not(:first-child){
-                    display: none;
-                }
+            li:not(:last-child){
+                display: none;
+            }
+            .mobileShowName{
+                display: inline-block !important;
             }
         }
         .App-logo{
             display: none;
         }
-    }
+        .appStore{
+            display: inline-block;
+        }
+    }    
 }

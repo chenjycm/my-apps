@@ -10,33 +10,61 @@ class Home extends Component {
         super();
         this.state = {
             visible: false,
+            appName: 'Home',
         }
     }
-    
+    componentWillMount(){
+        console.log(this.state.visible)
+    }    
     hide = () => {
         this.setState({
             visible: false,
         });
     }
-    handleVisableChange = (visible) => {
+    handleVisibleChange = (visible) => {
         this.setState({
-            visible
+            visible,
         });
     }
-    navContent = () => {
+    setAppName = (appName) => {
+        this.setState({
+            appName
+        })
+    }
+    navList = (show = false) => {
         return (
             <ul>
                 <li>
-                    <Link to="/music" activeClassName="navActive">
-                        <Icon type="play-circle-o" />Music
+                    <IndexLink to="/"  onClick={this.setAppName.bind(this,'Home')}  activeClassName="navActive">
+                        Home
+                    </IndexLink>
+                </li>
+                <li>
+                    <Link to="/music" onClick={this.setAppName.bind(this,'Music')} activeClassName="navActive">
+                        Music
                     </Link>
                 </li>
                 <li>
-                    <Link to="/page3" activeClassName="navActive">
+                    <Link to="/page3" onClick={this.setAppName.bind(this,'Page3')} activeClassName="navActive">
                         Page3 
                     </Link>
                 </li>
+                {
+                    show ? <li className="mobileShowName">
+                                <a>
+                                    {this.state.appName} 
+                                </a>
+                            </li>
+                    : ''
+                }
             </ul>
+        )
+    }
+    navContent = () => {
+        return (
+            <div className="mobileNavigation" onClick={this.hide}>
+               {this.navList(false)}
+            </div>
         )
     }
     render() {
@@ -44,34 +72,20 @@ class Home extends Component {
             <div className="App">
                 <header className="App-header">                   
                     <div className="navigation">
-                        <ul>
-                            <li>
-                                <IndexLink to="/" activeClassName="navActive">
-                                    Home
-                                </IndexLink>
-                            </li>
-                            <li>
-                                <Link to="/music" activeClassName="navActive">
-                                    Music
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/page3" activeClassName="navActive">
-                                    Page3 
-                                </Link>
-                            </li>
-                            <Popover  className="mobileNavigation" 
-                                placement="bottom" 
-                                title={'AppStore'} 
-                                content={this.navContent()} 
-                                trigger="click"
-                                visible={this.state.visible}
-                                onVisibleChange={this.handleVisibleChange}
-                            >
-                                <Icon type="appstore-o" className="appStore"/>
-                            </Popover>
-                            <img src={logo} className="App-logo" alt="logo" />
-                        </ul>
+                        {
+                            this.navList(true)
+                        }
+                        <Popover                             
+                            placement="bottom" 
+                            title={'AppStore'} 
+                            content={this.navContent()} 
+                            trigger="click"
+                            visible={this.state.visible}
+                            onVisibleChange={this.handleVisibleChange}
+                        >
+                            <Icon type="appstore-o" className="appStore"/>
+                        </Popover>
+                        <img src={logo} className="App-logo" alt="logo" />
                     </div>                    
                     <div className="userBox"><img className="avartar" src={avartar}/><span className="name">沉末</span></div>
                 </header>
