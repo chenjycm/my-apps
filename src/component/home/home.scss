@@ -13,6 +13,7 @@
     background-color: #222;
     padding: 10px;
     color: white;
+    position: relative;
 }
 
 .App-title {
@@ -24,7 +25,8 @@
 }
 
 .navigation {
-    display: inline-block;    
+    display: inline-block; 
+    width: 80%;  
     ul { 
         li {
            list-style: none;
@@ -52,11 +54,41 @@
             }
        }
     }
+    .appStore{
+        vertical-align: middle;
+        font-size: 20px;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+}
+.mobileNavigation{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 180px;
+    background-color: #d5d5d5;    
+    ul{
+        li{
+            padding: 10px;
+            font-size: 14px;
+            border-bottom: 1px solid #fff;
+            a{
+                color: #555;
+            }
+            &:hover{
+                background-color: #555;
+                a{
+                    color: #fff;
+                }
+            }
+        }
+    }
 }
 .userBox{
     display: inline-block;
     height: 40px;
     float: right;
+    margin-right: 30px;
     .avartar{
         width: 40px;
         height: 40px;
@@ -87,5 +119,17 @@
 }
 
 @media screen and (max-width: 768px) {
-   
+    .navigation{
+        width: initial;
+        ul{
+            li{
+                &:not(:first-child){
+                    display: none;
+                }
+            }
+        }
+        .App-logo{
+            display: none;
+        }
+    }
 }
