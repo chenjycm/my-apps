@@ -13,7 +13,9 @@ class MusicInfo extends Component {  //歌曲信息组件
                     {info != null ? info.artists : 'Sample'}
                 </p>
                 <div className="music-pic">
-                    <img src={info != null ? info.img : tempimg} alt="music-pic"/>
+                    <div>
+                        <img src={info != null ? info.img : tempimg} alt="music-pic"/>
+                    </div>
                 </div>
             </div>
         )

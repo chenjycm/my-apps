@@ -49,18 +49,21 @@
     margin-top: 20px;
     /*border: 1px solid #676869;*/
 }
-.music-pic img{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    max-width: 100%;
-    max-height: 100%;
-    // min-width: 100%;
-    // min-height: 100%;
+.music-pic{
+    border: 1px solid rgba(162, 154, 154, 0.73);
+    background-color: #fff;
+    img{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+    }
 }
+
 /*音乐进度*/
 .timeline{
     heigth:20px;

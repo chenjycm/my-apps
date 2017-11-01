@@ -62,7 +62,7 @@ class Musiclist extends Component {  //播放列表组件。
                 let data = res.data.showapi_res_body.pagebean.contentlist;
                 let pattern = /&#/g;
                 let newData = data.filter((e)=>{
-                    return e.songid > 0 && !pattern.test(e.songname)
+                    return  !(pattern.test(e.songname)) && !(pattern.test(e.singername)) && e.songid > 0 && e.songid
                 })
                 this.setState({
                     searchresult: newData,
@@ -77,7 +77,7 @@ class Musiclist extends Component {  //播放列表组件。
         }
     }
     searchMusic = () => {
-        const {searchContent} = this.state;
+        // const {searchContent} = this.state;
         this.setState({
             currentPage: 1
         })
