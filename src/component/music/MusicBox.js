@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { message } from "antd";
+import { message, Icon } from "antd";
 //引入自定义组件
 import Musiclist from "./Musiclist";
 import MusicInfo from "./MusicInfo.js";
@@ -20,7 +20,8 @@ class MusicBox extends Component {
             playStatus: false, //播放状态，false表示已暂停，true表示正在播放
             playVolume: 0.5, //音量 最小是0 最大是1
             lists: Music, //读取音乐列表到lists作为状态参数，正常应该设置为props参数，也可以在后面直接用Music（这里简化过程用了state，为了以后能够动态更新Music）
-            randomPlay: false
+            randomPlay: false,
+            skinStyle: 'linear-gradient(135deg, #79F1A4 0%, #0E5CAD 100%)',
         };
     } 
     componentDidMount() {
@@ -234,12 +235,34 @@ class MusicBox extends Component {
             randomPlay: !randomPlay
         })
     }
+    changeSkin = () => {
+        const skinIndex = Math.floor(Math.random()*10);
+        const skinRotate = Math.floor(Math.random()*360); 
+        const skinData = [
+            '#79F1A4 0%, #0E5CAD 100%',
+            '#FFF5C3 0%, #9452A5 100%',
+            '#F05F57 0%, #360940 100%',
+            '#92FFC0 0%, #002661 100%',
+            '#FDD819 0%, #E80505 100%',
+            '#30E3CA 0%, #11999E 100%',
+            '#587DB3 0%, #05244E 100%',
+            '#A24747 0%, #040000 100%',
+            '#4C6D64 0%, #4E3609 100%',
+            '#0C0C0C 0%, #773C3C 100%',
+        ]
+        
+        let skinStyle = `linear-gradient(${skinRotate}deg,${skinData[skinIndex]})`;
+        this.setState({
+            skinStyle
+        })
+    }
     render() {
-        const { lists, currentListIndex, currentTime, currentTotalTime, playStatus} = this.state;
+        const { lists, currentListIndex, currentTime, currentTotalTime, playStatus, skinStyle} = this.state;
         // let a = this.getRandom(3, 2);
         // console.log(a);
         return (
-            <div className="music-box" id="music-box" ref="musicbox">
+            <div className="music-box" id="music-box" ref="musicbox" style={{backgroundImage: skinStyle}}>                
+                <Icon type="eye-o" className="skinBtn" onClick={this.changeSkin} />
                 <Musiclist
                     lists={lists}
                     getListId={this.getListId}

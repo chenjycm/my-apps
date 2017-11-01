@@ -116,7 +116,7 @@
 
 @media screen and (max-width: 768px) {
     .navigation{
-        width: initial;
+        width: inherit;
         ul{
             li:not(:last-child){
                 display: none;

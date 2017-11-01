@@ -7,16 +7,25 @@
     width: 400px;
     height: 540px;
     background-color: #888;
-    background: url('./images/bg.jpg');
+    // background: url('./images/bg.jpg');
+    // background-image: linear-gradient(135deg, #79F1A4 0%, #0E5CAD 100%);
     margin: auto;
     margin-top: 20px;
     border-radius: 16px;
     padding-top: 20px;
     box-sizing: border-box;
     box-shadow: 10px 10px 7px #dad0d0;
+    .skinBtn{
+        position: absolute;
+        top: 72px;
+        right: 34px;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+    }
 }
 .music-name{
-    width: 70%;
+    width: 62%;
     margin: 0 auto;
     font-size: 20px;
     color: #fff;

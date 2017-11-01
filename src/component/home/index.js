@@ -14,7 +14,7 @@ class Home extends Component {
         }
     }
     componentWillMount(){
-        console.log(this.state.visible)
+        // console.log(this.state.visible)
     }    
     hide = () => {
         this.setState({
