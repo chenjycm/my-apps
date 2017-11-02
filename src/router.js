@@ -3,7 +3,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import Home from './component/home';
 import Music from './component/music/App.js';
 import HomePage from './component/homePage';
-import Page3 from './component/page3';
+import Gomoku from './component/gomoku';
 
 
 const RouteConfig = 
@@ -11,7 +11,7 @@ const RouteConfig =
 			<Route path="/" component={Home}>
 				<IndexRoute component={HomePage} />
 				<Route path="/music" component={Music} />
-				<Route path="/page3" component={Page3} />
+				<Route path="/gomoku" component={Gomoku} />
 			</Route>			
 	</Router>
 

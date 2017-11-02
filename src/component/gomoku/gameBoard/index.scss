@@ -1,0 +1,20 @@
+.gameBoard{
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #c5c5c5;
+    // background-color: #686e6c;;
+    .pieceItemA{
+        width: 20px;
+        height: 20px;
+        background-color: #C8C365;
+        // border-radius: 100%;
+    }
+    .pieceItemB{
+        width: 20px;
+        height: 20px;
+        background-color: #77A26D;
+        // border-radius: 100%;
+    }
+}

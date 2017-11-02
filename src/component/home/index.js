@@ -45,8 +45,8 @@ class Home extends Component {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/page3" onClick={this.setAppName.bind(this,'Page3')} activeClassName="navActive">
-                        Page3 
+                    <Link to="/gomoku" onClick={this.setAppName.bind(this,'Gomoku')} activeClassName="navActive">
+                        Gomoku 
                     </Link>
                 </li>
                 {
