@@ -8,7 +8,7 @@ class Gomoku extends Component {
     render() {
         return (
             <div className="page3">
-                <h2>Gomoku: 五子棋</h2>
+                <h2>Gomoku</h2>
                 <GameBoard />
             </div>
         );
