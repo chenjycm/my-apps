@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-
+import _ from 'lodash';
 import './index.scss';
+
 
 class GameBoard extends Component {
     constructor(){
@@ -10,13 +11,29 @@ class GameBoard extends Component {
             cubeWidth: 46,
             steps: [],
             stepCount : 0,
-            bTurn: true,  //该black下
+            blackTurn: true,  //该black下
         }
     }
     componentDidMount(){
         this.getBoardLine();
     }
-    getBoardLine = () => {
+    componentWillMount(){
+        const {cubeWidth, steps} = this.setState;
+        console.log(steps);
+        if(steps && steps.length > 0){
+            const c = this.refs.gameBoard;
+            let ctx = c.getContext('2d');
+            for(let i = 0; i < steps.length; i++){
+                let x = steps[i][0];
+                let y = steps[i][1];
+                ctx.beginPath();
+                ctx.arc(x*cubeWidth, y*cubeWidth, 18, 0, Math.PI*2,true);
+                ctx.closePath();
+                ctx.fill();
+            }
+        }
+    }
+    getBoardLine = () => {   //绘制游戏面板
         const {boardWidth, cubeWidth} = this.state; //面板宽度 和 格子宽度
         const c = this.refs.gameBoard;
         c.width = boardWidth;
@@ -40,23 +57,20 @@ class GameBoard extends Component {
         }
     }
     setChess = (e) => {
-        const{ cubeWidth, stepCount ,steps} = this.state;
+        const{ cubeWidth, stepCount ,blackTurn, steps} = this.state;
         const c = this.refs.gameBoard;
         let stepCoor = [];
-        let posX = e.pageX - c.getBoundingClientRect().left - 12,
+        let posX = e.pageX - c.getBoundingClientRect().left - 12,   //点击位置距离浏览器边的距离 - 容器距离浏览器边的距离 - 边框厚度
             posY = e.pageY - c.getBoundingClientRect().top - 12;
-        console.log(posX,posY);
         this.formulatPos(posX, posY);
         let x = Math.round(posX/cubeWidth), y = Math.round(posY/cubeWidth);
+
+        console.log(x,y)
         stepCoor.push([x,y]);       
-        console.log(stepCoor)
-        let ctx = c.getContext('2d');
-        ctx.beginPath();
-        ctx.arc(x*cubeWidth, y*cubeWidth, 18, 0, Math.PI*2,true);
-        ctx.closePath();
-        ctx.fill();
+        
         this.setState({
-            stepCount: stepCount + 1
+            stepCount: stepCount + 1 ,
+            steps: _.concat(steps, stepCoor)
         })
     }
     formulatPos = (a, b) => {
@@ -68,7 +82,7 @@ class GameBoard extends Component {
             <div>
                 <canvas ref="gameBoard" id="gameBoard" onClick={this.setChess} ></canvas>
                 <div>
-                    <span>steps:</span>
+                    <span>steps - </span>
                     {stepCount}
                 </div>
             </div>
