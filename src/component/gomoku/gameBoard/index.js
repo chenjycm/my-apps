@@ -52,22 +52,9 @@ class GameBoard extends Component {
             let c = this.c;
             let ctx = this.ctx;
             let stepCoor = {};
-            //点击位置距离浏览器边的距离 - 容器距离浏览器边的距离 - 边框厚度
-            // let posX = e.pageX - c.getBoundingClientRect().left - 34,   
-            //     posY = e.pageY - c.getBoundingClientRect().top - 34;
+            //点击位置距离浏览器边的距离 - 容器距离浏览器边的距离 - 边框厚度           
             let posX = e.pageX - c.offsetLeft - 34,   
                 posY = e.pageY - c.offsetTop - 34;
-
-
-                console.log('~~~');
-                console.log(c.offsetLeft, c.offsetTop);
-                console.log(c.getBoundingClientRect().left, c.getBoundingClientRect().top);
-                console.log('client:'+e.clientX,e.clientY);
-                console.log('offset:'+e.offsetX,e.offsetY);
-                console.log('screen:'+e.screenX,e.screenY);
-                
-                
-
             if((posX%cubeWidth > 28 || posX%cubeWidth < 17) && (posY%cubeWidth > 28 || posY%cubeWidth < 17)){
                 let x = Math.round(posX/cubeWidth), y = Math.round(posY/cubeWidth);
                 stepCoor.x = x;
