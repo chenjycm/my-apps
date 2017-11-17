@@ -1,0 +1,45 @@
+.fullPageBox{
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    .pointer{
+        position: absolute;
+        z-index: 10; 
+        .pointItem{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: transparent;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+        .active{
+            background: #000;            
+        }
+    }
+    .vertical{
+        right: 30px;
+        width: 14px;  
+    }
+    .horizontal{
+        .pointItem{
+            margin: 0 6px;
+        }
+    }
+    .pageList{
+        position: absolute;
+        top: 0;
+        left: 0;
+        // transition: all 0.5s; 
+        color: #fff;
+        font-size: 20px;   
+        .pageItemVertical{
+            width: 100%;
+        }
+        .pageItemhorizontal{
+            height: 100%;
+            display: inline-block;          
+        }
+    }
+}

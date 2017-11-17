@@ -1,5 +1,6 @@
 .App {
     text-align: left;
+    height: 100%;
 }
 
 .App-logo {
@@ -102,7 +103,8 @@
 
 
 .content{
-    padding-top: 10px;
+    // padding-top: 10px;
+    height: calc(100% - 60px);
 }
 
 @keyframes App-logo-spin {

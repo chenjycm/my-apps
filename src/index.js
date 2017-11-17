@@ -5,7 +5,7 @@ import RouteConfig from './router';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-    <div>
+    <div className='route'>
         {RouteConfig}
     </div>
     , document.getElementById('root')
