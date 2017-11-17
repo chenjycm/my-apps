@@ -4,6 +4,10 @@ import "./index.scss";
 
 // const color = ['#2893A2', '#FCA180', '#ABCB89', '#71BAF3']
 // horizontal   vertical
+// autoplay={true}
+// during={3000}
+
+
 class HomePage extends Component {
     render() {
         return (
