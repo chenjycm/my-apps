@@ -128,7 +128,6 @@ class GameBoard extends Component {
     
     clearAll = () => {
         let c = this.c;
-        // c.width = c.height;
         this.ctx.clearRect(0,0,c.width,c.height);  
         this.componentDidMount();
         this.setState({

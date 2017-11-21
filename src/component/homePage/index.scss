@@ -12,4 +12,22 @@
         display: inline-block;            
         height: 100%;
     }
+    .typeSwitch{
+        position: absolute;
+        z-index: 11;
+        left: 20px;
+        top: 70px;
+    }
+    .autoSwitch{
+        position: absolute;
+        z-index: 11;
+        left: 20px;
+        top: 100px;
+    }
+    .duringInput{
+        position: absolute;
+        z-index: 11;
+        left: 86px;
+        top: 96px;
+    }
 }
