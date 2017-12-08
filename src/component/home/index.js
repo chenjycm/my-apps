@@ -49,6 +49,11 @@ class Home extends Component {
                         Gomoku 
                     </Link>
                 </li>
+                <li>
+                    <Link to="/solarsys" onClick={this.setAppName.bind(this,'Solarsys')} activeClassName="navActive">
+                        Solarsys 
+                    </Link>
+                </li>
                 {
                     show ? <li className="mobileShowName">
                                 <a>

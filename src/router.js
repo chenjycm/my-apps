@@ -4,6 +4,7 @@ import Home from './component/home';
 import Music from './component/music/App.js';
 import HomePage from './component/homePage';
 import Gomoku from './component/gomoku';
+import Solarsys from './component/solarsys';
 
 
 const RouteConfig = 
@@ -12,6 +13,7 @@ const RouteConfig =
 				<IndexRoute component={HomePage} />
 				<Route path="/music" component={Music} />
 				<Route path="/gomoku" component={Gomoku} />
+				<Route path="/solarsys" component={Solarsys}/>
 			</Route>			
 	</Router>
 
