@@ -21,6 +21,7 @@ class Musiclist extends Component {  //播放列表组件。
 
     componentDidMount = ()=>{
         document.onclick = this.closeList;   //添加点击document 关闭list框
+        alert('由于免费音乐库无人维护，播放器只能获取正确的图片和名字，音频无法接入！')
     }
     componentWillUnmount(){ 
         //重写组件的setState方法，直接返回空
@@ -54,10 +55,38 @@ class Musiclist extends Component {  //播放列表组件。
             searchContent : e.target.value
         })
     }
+    formatterDateTime = () => {
+        var date=new Date()
+        var month=date.getMonth() + 1
+              var datetime = date.getFullYear()
+                      + ""// "年"
+                      + (month >= 10 ? month : "0"+ month)
+                      + ""// "月"
+                      + (date.getDate() < 10 ? "0" + date.getDate() : date
+                              .getDate())
+                      + ""
+                      + (date.getHours() < 10 ? "0" + date.getHours() : date
+                              .getHours())
+                      + ""
+                      + (date.getMinutes() < 10 ? "0" + date.getMinutes() : date
+                              .getMinutes())
+                      + ""
+                      + (date.getSeconds() < 10 ? "0" + date.getSeconds() : date
+                              .getSeconds());
+              return datetime;
+          }
     fetchData = (page = 1) => {
         const {searchContent} = this.state;
         if(searchContent){
             axios.get('https://route.showapi.com/213-1?showapi_appid=42818&showapi_sign=fec952c9ebbb40399437efcff818f458&keyword='+searchContent+'&page='+page+'&')
+            // axios.post('https://route.showapi.com/213-1',{
+            //     showapi_timestamp: this.formatterDateTime(),
+            //     showapi_appid: '42818', //这里需要改成自己的appid
+            //     showapi_sign: 'fec952c9ebbb40399437efcff818f458',  //这里需要改成自己的应用的密钥secret
+            //     keyword: searchContent,
+            //     page: page
+        
+            // })
             .then((res)=>{
                 let data = res.data.showapi_res_body.pagebean.contentlist;
                 let pattern = /&#/g;
@@ -68,9 +97,8 @@ class Musiclist extends Component {  //播放列表组件。
                     searchresult: newData,
                     totalPage: res.data.showapi_res_body.pagebean.allPages
                 });
-            })
-            .catch((err)=>{
-                console.log(err);
+            }).catch((err)=>{
+                message.error(err);
             })
         }else{
              message.warning('未输入搜索内容！',2,)
