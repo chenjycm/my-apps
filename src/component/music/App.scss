@@ -1,6 +1,7 @@
 .musicApp {
   text-align: center;
   cursor: default;
+  padding-top: 20px;
 }
 .music-box{
     position: relative;
@@ -10,7 +11,6 @@
     // background: url('./images/bg.jpg');
     // background-image: linear-gradient(135deg, #79F1A4 0%, #0E5CAD 100%);
     margin: auto;
-    margin-top: 20px;
     border-radius: 16px;
     padding-top: 20px;
     box-sizing: border-box;
@@ -300,6 +300,7 @@
 }
 .appInfo{
     margin-top: 20px;
+    text-align: center;
     .gitAddress{
         font-size: 14px;
     }

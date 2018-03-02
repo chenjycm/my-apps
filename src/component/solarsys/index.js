@@ -124,7 +124,10 @@ class Solarsys extends Component {
     render() {
         return (
             <div className="solarSys">
-                <div className="banner">ARE WE AlONE!</div>
+                <div className="banner">ARE WE ALONE ?</div>
+                <div className="appInfo">
+                    <div className="gitAddress"><span>Code: https://github.com/chenjycm/my-apps/tree/master/src/component/solarsys</span></div>
+                </div>
                 <div className="sun">
                     <div className="earthSys">
                         <div className="earthOrbit">
