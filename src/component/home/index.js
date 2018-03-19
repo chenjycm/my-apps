@@ -51,7 +51,12 @@ class Home extends Component {
                 </li>
                 <li>
                     <Link to="/solarsys" onClick={this.setAppName.bind(this,'Solarsys')} activeClassName="navActive">
-                        Solarsys 
+                        Solarsys
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/turnplate" onClick={this.setAppName.bind(this,'Turnplate')} activeClassName="navActive">
+                        Turnplate 
                     </Link>
                 </li>
                 {
