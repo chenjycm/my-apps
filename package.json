@@ -50,6 +50,7 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "devDependencies": {
+    "antd": "^2.13.8",
     "axios": "^0.18.0",
     "babel-plugin-import": "^1.6.2",
     "node-sass": "^4.5.3",
